@@ -1130,7 +1130,7 @@ class InfoUi(QFrame):
         self.BodyLabel.setText(QCoreApplication.translate("Form",
                                                           u"DouyinCatcher\u662f\u4e00\u6b3e\u53ef\u4ee5\u5c06\u6296\u97f3\u77ed\u89c6\u9891\u4e0a\u7684\u89c6\u9891/\u56fe\u7247\u65e0\u6c34\u5370\u4e0b\u8f7d\u5230\u672c\u5730\u7684\u5f00\u6e90\u3001\u5b8c\u5168\u514d\u8d39\u7684\u5de5\u5177\u3002",
                                                           None))
-        self.BodyLabel_5.setText(QCoreApplication.translate("Form", u"Version: ", None))
+        self.BodyLabel_5.setText(QCoreApplication.translate("Form", u"Version: " + VERSION, None))
         self.BodyLabel_3.setText(QCoreApplication.translate("Form", u"Author: HShiDianLu.", None))
         self.BodyLabel_4.setText(QCoreApplication.translate("Form",
                                                             u"\u6b64\u7a0b\u5e8f\u4ec5\u4f9b\u5b66\u4e60\u4ea4\u6d41\u4f7f\u7528\uff0c\u89c6\u9891/\u56fe\u96c6\u8457\u4f5c\u6743\u5f52\u5c5e\u4e8e\u539f\u4f5c\u8005\u3002\u4e25\u7981\u7528\u4e8e\u975e\u6cd5\u7528\u9014\u3002",
