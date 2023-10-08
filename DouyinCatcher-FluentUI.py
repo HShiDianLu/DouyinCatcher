@@ -22,7 +22,7 @@ from qframelesswindow import *
 from qfluentwidgets import FluentIcon as FIF
 from configparser import *
 
-VERSION = "v3.0-FluentUI"
+VERSION = "v3.2-FluentUI"
 FILEDIR = "C:/DouyinCatcher"
 
 # 创建图标
@@ -482,137 +482,196 @@ class MainUi(QFrame):
         font.setPointSize(10)
         self.setFont(font)
         # self.setStyleSheet(u"")
-        self.TitleLabel = TitleLabel(self)
-        self.TitleLabel.setObjectName(u"TitleLabel")
-        self.TitleLabel.setGeometry(QRect(20, 40, 211, 41))
-        self.CaptionLabel = CaptionLabel(self)
-        self.CaptionLabel.setObjectName(u"CaptionLabel")
-        self.CaptionLabel.setGeometry(QRect(20, 80, 171, 16))
-        self.CaptionLabel_2 = CaptionLabel(self)
-        self.CaptionLabel_2.setObjectName(u"CaptionLabel_2")
-        self.CaptionLabel_2.setGeometry(QRect(20, 470, 431, 31))
-        self.CaptionLabel_2.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
-        self.PrimaryPushButton = PrimaryPushButton(self)
-        self.PrimaryPushButton.setObjectName(u"PrimaryPushButton")
-        self.PrimaryPushButton.setGeometry(QRect(20, 400, 161, 31))
-        self.StrongBodyLabel = StrongBodyLabel(self)
-        self.StrongBodyLabel.setObjectName(u"StrongBodyLabel")
-        self.StrongBodyLabel.setGeometry(QRect(20, 450, 500, 31))
-        self.StrongBodyLabel.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
-        self.verticalLayoutWidget = QWidget(self)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(20, 110, 331, 71))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.BodyLabel = BodyLabel(self.verticalLayoutWidget)
-        self.BodyLabel.setObjectName(u"BodyLabel")
+        self.gridLayout_2 = QGridLayout(self)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setHorizontalSpacing(70)
+        self.gridLayout_2.setContentsMargins(20, 40, 20, 15)
+        self.verticalSpacer_4 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
-        self.verticalLayout.addWidget(self.BodyLabel)
+        self.gridLayout_2.addItem(self.verticalSpacer_4, 10, 0, 1, 1)
 
-        self.LineEdit = LineEdit(self.verticalLayoutWidget)
-        self.LineEdit.setObjectName(u"LineEdit")
-        self.LineEdit.setMinimumSize(QSize(0, 20))
-
-        self.verticalLayout.addWidget(self.LineEdit)
-
-        self.verticalLayoutWidget_2 = QWidget(self)
-        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(20, 280, 331, 111))
-        self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setSpacing(6)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.BodyLabel_2 = BodyLabel(self.verticalLayoutWidget_2)
-        self.BodyLabel_2.setObjectName(u"BodyLabel_2")
+        self.StrongBodyLabel_5 = StrongBodyLabel(self)
+        self.StrongBodyLabel_5.setObjectName(u"StrongBodyLabel_5")
 
-        self.verticalLayout_2.addWidget(self.BodyLabel_2)
+        self.verticalLayout_2.addWidget(self.StrongBodyLabel_5)
 
-        self.RadioButton = RadioButton(self.verticalLayoutWidget_2)
+        self.RadioButton = RadioButton(self)
         self.RadioButton.setObjectName(u"RadioButton")
         self.RadioButton.setChecked(True)
 
         self.verticalLayout_2.addWidget(self.RadioButton)
 
-        self.RadioButton_2 = RadioButton(self.verticalLayoutWidget_2)
+        self.RadioButton_2 = RadioButton(self)
         self.RadioButton_2.setObjectName(u"RadioButton_2")
 
         self.verticalLayout_2.addWidget(self.RadioButton_2)
 
-        self.RadioButton_3 = RadioButton(self.verticalLayoutWidget_2)
+        self.RadioButton_3 = RadioButton(self)
         self.RadioButton_3.setObjectName(u"RadioButton_3")
 
         self.verticalLayout_2.addWidget(self.RadioButton_3)
 
-        self.gridLayoutWidget = QWidget(self)
-        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(20, 190, 331, 71))
-        self.gridLayout = QGridLayout(self.gridLayoutWidget)
+        self.gridLayout_2.addLayout(self.verticalLayout_2, 9, 0, 1, 1)
+
+        self.verticalSpacer = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.gridLayout_2.addItem(self.verticalSpacer, 2, 0, 1, 2)
+
+        self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.BodyLabel_3 = BodyLabel(self.gridLayoutWidget)
-        self.BodyLabel_3.setObjectName(u"BodyLabel_3")
-
-        self.gridLayout.addWidget(self.BodyLabel_3, 0, 0, 1, 1)
-
-        self.ComboBox = ComboBox(self.gridLayoutWidget)
+        self.gridLayout.setHorizontalSpacing(25)
+        self.gridLayout.setVerticalSpacing(10)
+        self.ComboBox = ComboBox(self)
         self.ComboBox.setObjectName(u"ComboBox")
-        self.ComboBox.addItems(["Chrome", "Microsoft Edge", "Firefox", "IE", "Safari"])
 
         self.gridLayout.addWidget(self.ComboBox, 1, 0, 1, 1)
 
-        self.CheckBox = CheckBox(self.gridLayoutWidget)
+        self.StrongBodyLabel_4 = StrongBodyLabel(self)
+        self.StrongBodyLabel_4.setObjectName(u"StrongBodyLabel_4")
+
+        self.gridLayout.addWidget(self.StrongBodyLabel_4, 0, 0, 1, 1)
+
+        self.CheckBox = CheckBox(self)
         self.CheckBox.setObjectName(u"CheckBox")
-        self.CheckBox.setChecked(True)
 
         self.gridLayout.addWidget(self.CheckBox, 1, 1, 1, 1)
 
+        self.gridLayout_2.addLayout(self.gridLayout, 7, 0, 1, 1)
+
+        self.PrimaryPushButton = PrimaryPushButton(self)
+        self.PrimaryPushButton.setObjectName(u"PrimaryPushButton")
+
+        self.gridLayout_2.addWidget(self.PrimaryPushButton, 11, 0, 1, 1)
+
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setSpacing(10)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.StrongBodyLabel_3 = StrongBodyLabel(self)
+        self.StrongBodyLabel_3.setObjectName(u"StrongBodyLabel_3")
+
+        self.verticalLayout.addWidget(self.StrongBodyLabel_3)
+
+        self.LineEdit = LineEdit(self)
+        self.LineEdit.setObjectName(u"LineEdit")
+
+        self.verticalLayout.addWidget(self.LineEdit)
+
+        self.gridLayout_2.addLayout(self.verticalLayout, 4, 0, 2, 1)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.gridLayout_2.addItem(self.verticalSpacer_5, 6, 0, 1, 1)
+
+        self.verticalSpacer_6 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.gridLayout_2.addItem(self.verticalSpacer_6, 8, 0, 1, 1)
+
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setSpacing(2)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(-1, 0, -1, -1)
+        self.StrongBodyLabel = StrongBodyLabel(self)
+        self.StrongBodyLabel.setObjectName(u"StrongBodyLabel")
+        self.StrongBodyLabel.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
+
+        self.verticalLayout_3.addWidget(self.StrongBodyLabel)
+
+        self.CaptionLabel_2 = CaptionLabel(self)
+        self.CaptionLabel_2.setObjectName(u"CaptionLabel_2")
+        self.CaptionLabel_2.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
+
+        self.verticalLayout_3.addWidget(self.CaptionLabel_2)
+
+        self.gridLayout_2.addLayout(self.verticalLayout_3, 16, 0, 1, 2)
+
+        self.verticalLayout_4 = QVBoxLayout()
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.TitleLabel = TitleLabel(self)
+        self.TitleLabel.setObjectName(u"TitleLabel")
+
+        self.verticalLayout_4.addWidget(self.TitleLabel)
+
+        self.CaptionLabel = CaptionLabel(self)
+        self.CaptionLabel.setObjectName(u"CaptionLabel")
+
+        self.verticalLayout_4.addWidget(self.CaptionLabel)
+
+        self.gridLayout_2.addLayout(self.verticalLayout_4, 1, 0, 1, 2)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_2.addItem(self.verticalSpacer_2, 15, 0, 1, 1)
+
+        self.verticalLayout_6 = QVBoxLayout()
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.StrongBodyLabel_2 = StrongBodyLabel(self)
+        self.StrongBodyLabel_2.setObjectName(u"StrongBodyLabel_2")
+
+        self.verticalLayout_6.addWidget(self.StrongBodyLabel_2)
+
+        self.verticalSpacer_8 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_8)
+
         self.ListWidget_2 = ListWidget(self)
-        QListWidgetItem(self.ListWidget_2)
-        QListWidgetItem(self.ListWidget_2)
-        QListWidgetItem(self.ListWidget_2)
-        QListWidgetItem(self.ListWidget_2)
-        QListWidgetItem(self.ListWidget_2)
-        QListWidgetItem(self.ListWidget_2)
-        QListWidgetItem(self.ListWidget_2)
-        QListWidgetItem(self.ListWidget_2)
-        QListWidgetItem(self.ListWidget_2)
         self.ListWidget_2.setObjectName(u"ListWidget_2")
-        self.ListWidget_2.setGeometry(QRect(380, 140, 321, 251))
         self.ListWidget_2.setFrameShape(QFrame.StyledPanel)
         self.ListWidget_2.setFrameShadow(QFrame.Sunken)
         self.ListWidget_2.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.ListWidget_2.setMovement(QListView.Static)
         self.ListWidget_2.setViewMode(QListView.ListMode)
-        self.horizontalLayoutWidget_4 = QWidget(self)
-        self.horizontalLayoutWidget_4.setObjectName(u"horizontalLayoutWidget_4")
-        self.horizontalLayoutWidget_4.setGeometry(QRect(380, 400, 321, 34))
-        self.horizontalLayout_4 = QHBoxLayout(self.horizontalLayoutWidget_4)
+
+        self.verticalLayout_6.addWidget(self.ListWidget_2)
+
+        self.verticalSpacer_7 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_7)
+
+        self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.PushButton = PushButton(self.horizontalLayoutWidget_4)
+        self.PushButton = PushButton(self)
         self.PushButton.setObjectName(u"PushButton")
 
         self.horizontalLayout_4.addWidget(self.PushButton)
 
-        self.PushButton_2 = PushButton(self.horizontalLayoutWidget_4)
+        self.horizontalSpacer_2 = QSpacerItem(10, 17, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
+
+        self.PushButton_2 = PushButton(self)
         self.PushButton_2.setObjectName(u"PushButton_2")
 
         self.horizontalLayout_4.addWidget(self.PushButton_2)
 
-        self.PrimaryPushButton_2 = PrimaryPushButton(self.horizontalLayoutWidget_4)
+        self.horizontalSpacer_3 = QSpacerItem(10, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_3)
+
+        self.PrimaryPushButton_2 = PrimaryPushButton(self)
         self.PrimaryPushButton_2.setObjectName(u"PrimaryPushButton_2")
 
         self.horizontalLayout_4.addWidget(self.PrimaryPushButton_2)
 
+        self.verticalLayout_6.addLayout(self.horizontalLayout_4)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_3)
+
         self.ProgressBar = ProgressBar(self)
         self.ProgressBar.setObjectName(u"ProgressBar")
-        self.ProgressBar.setGeometry(QRect(380, 440, 321, 4))
-        self.ProgressBar.setValue(0)
+        self.ProgressBar.setValue(30)
         self.ProgressBar.setUseAni(True)
-        self.StrongBodyLabel_2 = StrongBodyLabel(self)
-        self.StrongBodyLabel_2.setObjectName(u"StrongBodyLabel_2")
-        self.StrongBodyLabel_2.setGeometry(QRect(390, 110, 113, 19))
 
+        self.verticalLayout_6.addWidget(self.ProgressBar)
+
+        self.gridLayout_2.addLayout(self.verticalLayout_6, 4, 1, 12, 1)
+
+        self.ComboBox.addItems(["Chrome", "Microsoft Edge", "Firefox", "IE", "Safari"])
         self.catchThread = Catch()
         self.PrimaryPushButton.clicked.connect(self.catch)
         self.catchThread.messageboxShow.connect(self.msgShow)
@@ -642,6 +701,7 @@ class MainUi(QFrame):
         self.PushButton_2.setEnabled(False)
         self.ListWidget_2.setEnabled(False)
         self.ListWidget_2.setSelectionMode(QAbstractItemView.NoSelection)
+        self.ProgressBar.setValue(0)
 
         self.CheckBox.setChecked(config["hide"])
         self.ComboBox.setText(config["type"])
@@ -668,12 +728,12 @@ class MainUi(QFrame):
         self.PrimaryPushButton.setText(QCoreApplication.translate("Form", u"\u6267\u884c", None))
         self.StrongBodyLabel.setText(
             QCoreApplication.translate("Form", u"Author: HShiDianLu. | Version " + VERSION, None))
-        self.BodyLabel.setText(QCoreApplication.translate("Form", u"\u89c6\u9891\u94fe\u63a5", None))
-        self.BodyLabel_2.setText(QCoreApplication.translate("Form", u"\u6a21\u5f0f", None))
+        self.StrongBodyLabel_3.setText(QCoreApplication.translate("Form", u"\u89c6\u9891\u94fe\u63a5", None))
+        self.StrongBodyLabel_4.setText(QCoreApplication.translate("Form", u"\u6a21\u5f0f", None))
         self.RadioButton.setText(QCoreApplication.translate("Form", u"\u81ea\u52a8\u8bc6\u522b", None))
         self.RadioButton_2.setText(QCoreApplication.translate("Form", u"\u89c6\u9891", None))
         self.RadioButton_3.setText(QCoreApplication.translate("Form", u"\u56fe\u96c6", None))
-        self.BodyLabel_3.setText(QCoreApplication.translate("Form", u"\u4f7f\u7528\u6d4f\u89c8\u5668", None))
+        self.StrongBodyLabel_5.setText(QCoreApplication.translate("Form", u"\u4f7f\u7528\u6d4f\u89c8\u5668", None))
         self.CheckBox.setText(QCoreApplication.translate("Form", u"\u9690\u85cf\u6d4f\u89c8\u5668", None))
 
         __sortingEnabled = self.ListWidget_2.isSortingEnabled()
@@ -882,87 +942,121 @@ class SettingUi(QWidget):
         font.setPointSize(10)
         self.setFont(font)
         # self.setStyleSheet(u"")
+        self.verticalLayout_3 = QVBoxLayout(self)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(20, 40, 20, 15)
+        self.verticalLayout_4 = QVBoxLayout()
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.TitleLabel = TitleLabel(self)
         self.TitleLabel.setObjectName(u"TitleLabel")
-        self.TitleLabel.setGeometry(QRect(20, 40, 211, 41))
+
+        self.verticalLayout_4.addWidget(self.TitleLabel)
+
         self.CaptionLabel = CaptionLabel(self)
         self.CaptionLabel.setObjectName(u"CaptionLabel")
-        self.CaptionLabel.setGeometry(QRect(20, 80, 171, 16))
-        self.CaptionLabel_2 = CaptionLabel(self)
-        self.CaptionLabel_2.setObjectName(u"CaptionLabel_2")
-        self.CaptionLabel_2.setGeometry(QRect(20, 470, 431, 31))
-        self.CaptionLabel_2.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
-        self.StrongBodyLabel = StrongBodyLabel(self)
-        self.StrongBodyLabel.setObjectName(u"StrongBodyLabel")
-        self.StrongBodyLabel.setGeometry(QRect(20, 450, 500, 31))
-        self.StrongBodyLabel.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
-        self.verticalLayoutWidget_2 = QWidget(self)
-        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(20, 200, 331, 111))
-        self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.BodyLabel_2 = BodyLabel(self.verticalLayoutWidget_2)
-        self.BodyLabel_2.setObjectName(u"BodyLabel_2")
 
-        self.verticalLayout_2.addWidget(self.BodyLabel_2)
+        self.verticalLayout_4.addWidget(self.CaptionLabel)
 
-        self.RadioButton = RadioButton(self.verticalLayoutWidget_2)
-        self.RadioButton.setObjectName(u"RadioButton")
-        self.RadioButton.setChecked(False)
+        self.verticalLayout_3.addLayout(self.verticalLayout_4)
 
-        self.verticalLayout_2.addWidget(self.RadioButton)
+        self.verticalSpacer = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
-        self.RadioButton_2 = RadioButton(self.verticalLayoutWidget_2)
-        self.RadioButton_2.setObjectName(u"RadioButton_2")
+        self.verticalLayout_3.addItem(self.verticalSpacer)
 
-        self.verticalLayout_2.addWidget(self.RadioButton_2)
-
-        self.RadioButton_3 = RadioButton(self.verticalLayoutWidget_2)
-        self.RadioButton_3.setObjectName(u"RadioButton_3")
-        self.RadioButton_3.setChecked(True)
-
-        self.verticalLayout_2.addWidget(self.RadioButton_3)
-
-        self.gridLayoutWidget_2 = QWidget(self)
-        self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(20, 110, 331, 71))
-        self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
+        self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.LineEdit = LineEdit(self.gridLayoutWidget_2)
+        self.gridLayout_2.setVerticalSpacing(10)
+        self.BodyLabel_4 = BodyLabel(self)
+        self.BodyLabel_4.setObjectName(u"BodyLabel_4")
+
+        self.gridLayout_2.addWidget(self.BodyLabel_4, 0, 0, 1, 1)
+
+        self.LineEdit = LineEdit(self)
         self.LineEdit.setObjectName(u"LineEdit")
         self.LineEdit.setMinimumSize(QSize(0, 20))
         self.LineEdit.setReadOnly(True)
 
         self.gridLayout_2.addWidget(self.LineEdit, 1, 0, 1, 1)
 
-        self.BodyLabel_4 = BodyLabel(self.gridLayoutWidget_2)
-        self.BodyLabel_4.setObjectName(u"BodyLabel_4")
-
-        self.gridLayout_2.addWidget(self.BodyLabel_4, 0, 0, 1, 1)
-
-        self.ToolButton = ToolButton(self.gridLayoutWidget_2)
+        self.ToolButton = ToolButton(self)
         self.ToolButton.setObjectName(u"ToolButton")
-        self.ToolButton.setIcon(FIF.MORE)
 
         self.gridLayout_2.addWidget(self.ToolButton, 1, 1, 1, 1)
 
-        self.verticalLayoutWidget = QWidget(self)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(20, 320, 226, 51))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout_3.addLayout(self.gridLayout_2)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_3.addItem(self.verticalSpacer_3)
+
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.BodyLabel_2 = BodyLabel(self)
+        self.BodyLabel_2.setObjectName(u"BodyLabel_2")
+
+        self.verticalLayout_2.addWidget(self.BodyLabel_2)
+
+        self.RadioButton = RadioButton(self)
+        self.RadioButton.setObjectName(u"RadioButton")
+        self.RadioButton.setChecked(False)
+
+        self.verticalLayout_2.addWidget(self.RadioButton)
+
+        self.RadioButton_2 = RadioButton(self)
+        self.RadioButton_2.setObjectName(u"RadioButton_2")
+
+        self.verticalLayout_2.addWidget(self.RadioButton_2)
+
+        self.RadioButton_3 = RadioButton(self)
+        self.RadioButton_3.setObjectName(u"RadioButton_3")
+        self.RadioButton_3.setChecked(True)
+
+        self.verticalLayout_2.addWidget(self.RadioButton_3)
+
+        self.verticalLayout_3.addLayout(self.verticalLayout_2)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_3.addItem(self.verticalSpacer_4)
+
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.BodyLabel_3 = BodyLabel(self.verticalLayoutWidget)
+        self.BodyLabel_3 = BodyLabel(self)
         self.BodyLabel_3.setObjectName(u"BodyLabel_3")
 
         self.verticalLayout.addWidget(self.BodyLabel_3)
 
-        self.SwitchButton = SwitchButton(self.verticalLayoutWidget)
+        self.SwitchButton = SwitchButton(self)
         self.SwitchButton.setObjectName(u"SwitchButton")
+        self.SwitchButton.setChecked(True)
 
         self.verticalLayout.addWidget(self.SwitchButton)
+
+        self.verticalLayout_3.addLayout(self.verticalLayout)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_3.addItem(self.verticalSpacer_2)
+
+        self.verticalLayout_5 = QVBoxLayout()
+        self.verticalLayout_5.setSpacing(2)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.StrongBodyLabel = StrongBodyLabel(self)
+        self.StrongBodyLabel.setObjectName(u"StrongBodyLabel")
+        self.StrongBodyLabel.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
+
+        self.verticalLayout_5.addWidget(self.StrongBodyLabel)
+
+        self.CaptionLabel_2 = CaptionLabel(self)
+        self.CaptionLabel_2.setObjectName(u"CaptionLabel_2")
+        self.CaptionLabel_2.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
+
+        self.verticalLayout_5.addWidget(self.CaptionLabel_2)
+
+        self.verticalLayout_3.addLayout(self.verticalLayout_5)
+
+        self.ToolButton.setIcon(FIF.MORE)
 
         self.LineEdit.setText(config["path"])
         if config["theme"] == "dark":
@@ -1054,63 +1148,139 @@ class InfoUi(QFrame):
         font.setFamily(u"DengXian")
         font.setPointSize(10)
         self.setFont(font)
-        self.setStyleSheet(u"")
+        # self.setStyleSheet(u"")
+        self.verticalLayout = QVBoxLayout(self)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(20, 40, 20, 15)
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.TitleLabel = TitleLabel(self)
         self.TitleLabel.setObjectName(u"TitleLabel")
-        self.TitleLabel.setGeometry(QRect(20, 40, 211, 41))
+
+        self.verticalLayout_2.addWidget(self.TitleLabel)
+
         self.CaptionLabel = CaptionLabel(self)
         self.CaptionLabel.setObjectName(u"CaptionLabel")
-        self.CaptionLabel.setGeometry(QRect(20, 80, 171, 16))
+
+        self.verticalLayout_2.addWidget(self.CaptionLabel)
+
+        self.verticalLayout.addLayout(self.verticalLayout_2)
+
         self.BodyLabel = BodyLabel(self)
         self.BodyLabel.setObjectName(u"BodyLabel")
-        self.BodyLabel.setGeometry(QRect(20, 100, 621, 31))
+
+        self.verticalLayout.addWidget(self.BodyLabel)
+
+        self.verticalSpacer = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout.addItem(self.verticalSpacer)
+
         self.ElevatedCardWidget = ElevatedCardWidget(self)
         self.ElevatedCardWidget.setObjectName(u"ElevatedCardWidget")
-        self.ElevatedCardWidget.setGeometry(QRect(20, 140, 681, 111))
-        self.BodyLabel_5 = BodyLabel(self.ElevatedCardWidget)
-        self.BodyLabel_5.setObjectName(u"BodyLabel_5")
-        self.BodyLabel_5.setGeometry(QRect(10, 50, 251, 19))
-        self.BodyLabel_3 = BodyLabel(self.ElevatedCardWidget)
-        self.BodyLabel_3.setObjectName(u"BodyLabel_3")
-        self.BodyLabel_3.setGeometry(QRect(10, 30, 251, 19))
-        self.BodyLabel_4 = BodyLabel(self.ElevatedCardWidget)
-        self.BodyLabel_4.setObjectName(u"BodyLabel_4")
-        self.BodyLabel_4.setGeometry(QRect(10, 80, 511, 19))
+        self.verticalLayout_3 = QVBoxLayout(self.ElevatedCardWidget)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(10, 10, 10, 10)
         self.StrongBodyLabel_3 = StrongBodyLabel(self.ElevatedCardWidget)
         self.StrongBodyLabel_3.setObjectName(u"StrongBodyLabel_3")
-        self.StrongBodyLabel_3.setGeometry(QRect(10, 10, 113, 19))
+
+        self.verticalLayout_3.addWidget(self.StrongBodyLabel_3)
+
+        self.verticalLayout_6 = QVBoxLayout()
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.BodyLabel_3 = BodyLabel(self.ElevatedCardWidget)
+        self.BodyLabel_3.setObjectName(u"BodyLabel_3")
+
+        self.verticalLayout_6.addWidget(self.BodyLabel_3)
+
+        self.BodyLabel_5 = BodyLabel(self.ElevatedCardWidget)
+        self.BodyLabel_5.setObjectName(u"BodyLabel_5")
+
+        self.verticalLayout_6.addWidget(self.BodyLabel_5)
+
+        self.verticalLayout_3.addLayout(self.verticalLayout_6)
+
+        self.BodyLabel_4 = BodyLabel(self.ElevatedCardWidget)
+        self.BodyLabel_4.setObjectName(u"BodyLabel_4")
+
+        self.verticalLayout_3.addWidget(self.BodyLabel_4)
+
+        self.verticalLayout.addWidget(self.ElevatedCardWidget)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout.addItem(self.verticalSpacer_4)
+
         self.ElevatedCardWidget_2 = ElevatedCardWidget(self)
         self.ElevatedCardWidget_2.setObjectName(u"ElevatedCardWidget_2")
-        self.ElevatedCardWidget_2.setGeometry(QRect(20, 270, 681, 61))
-        self.BodyLabel_9 = BodyLabel(self.ElevatedCardWidget_2)
-        self.BodyLabel_9.setObjectName(u"BodyLabel_9")
-        self.BodyLabel_9.setGeometry(QRect(10, 30, 251, 19))
+        self.gridLayout = QGridLayout(self.ElevatedCardWidget_2)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(10, 10, 10, 10)
         self.StrongBodyLabel_5 = StrongBodyLabel(self.ElevatedCardWidget_2)
         self.StrongBodyLabel_5.setObjectName(u"StrongBodyLabel_5")
-        self.StrongBodyLabel_5.setGeometry(QRect(10, 10, 113, 19))
+
+        self.gridLayout.addWidget(self.StrongBodyLabel_5, 1, 0, 1, 1)
+
+        self.BodyLabel_9 = BodyLabel(self.ElevatedCardWidget_2)
+        self.BodyLabel_9.setObjectName(u"BodyLabel_9")
+
+        self.gridLayout.addWidget(self.BodyLabel_9, 2, 0, 1, 1)
+
         self.ToolButton = ToolButton(self.ElevatedCardWidget_2)
         self.ToolButton.setObjectName(u"ToolButton")
-        self.ToolButton.setGeometry(QRect(630, 14, 38, 32))
+
+        self.gridLayout.addWidget(self.ToolButton, 1, 1, 2, 1)
+
+        self.verticalLayout.addWidget(self.ElevatedCardWidget_2)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout.addItem(self.verticalSpacer_5)
+
         self.ElevatedCardWidget_3 = ElevatedCardWidget(self)
         self.ElevatedCardWidget_3.setObjectName(u"ElevatedCardWidget_3")
-        self.ElevatedCardWidget_3.setGeometry(QRect(20, 350, 681, 81))
-        self.StrongBodyLabel_6 = StrongBodyLabel(self.ElevatedCardWidget_3)
-        self.StrongBodyLabel_6.setObjectName(u"StrongBodyLabel_6")
-        self.StrongBodyLabel_6.setGeometry(QRect(10, 10, 113, 19))
+        self.gridLayout_2 = QGridLayout(self.ElevatedCardWidget_3)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setHorizontalSpacing(6)
+        self.gridLayout_2.setVerticalSpacing(0)
+        self.gridLayout_2.setContentsMargins(10, 10, 10, 10)
         self.BodyLabel_10 = BodyLabel(self.ElevatedCardWidget_3)
         self.BodyLabel_10.setObjectName(u"BodyLabel_10")
-        self.BodyLabel_10.setGeometry(QRect(60, 40, 51, 31))
+
+        self.gridLayout_2.addWidget(self.BodyLabel_10, 2, 1, 3, 1)
+
         self.CaptionLabel_2 = CaptionLabel(self.ElevatedCardWidget_3)
         self.CaptionLabel_2.setObjectName(u"CaptionLabel_2")
-        self.CaptionLabel_2.setGeometry(QRect(430, 30, 231, 21))
         self.CaptionLabel_2.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
-        self.CaptionLabel_3 = CaptionLabel(self.ElevatedCardWidget_3)
-        self.CaptionLabel_3.setObjectName(u"CaptionLabel_3")
-        self.CaptionLabel_3.setGeometry(QRect(430, 50, 231, 21))
-        self.CaptionLabel_3.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.CaptionLabel_2, 2, 2, 1, 1)
+
+        self.StrongBodyLabel_6 = StrongBodyLabel(self.ElevatedCardWidget_3)
+        self.StrongBodyLabel_6.setObjectName(u"StrongBodyLabel_6")
+
+        self.gridLayout_2.addWidget(self.StrongBodyLabel_6, 0, 0, 1, 2)
+
         self.ToolButton_2 = ToolButton(self.ElevatedCardWidget_3)
         self.ToolButton_2.setObjectName(u"ToolButton_2")
-        self.ToolButton_2.setGeometry(QRect(10, 40, 38, 32))
+
+        self.gridLayout_2.addWidget(self.ToolButton_2, 2, 0, 3, 1)
+
+        self.CaptionLabel_3 = CaptionLabel(self.ElevatedCardWidget_3)
+        self.CaptionLabel_3.setObjectName(u"CaptionLabel_3")
+        self.CaptionLabel_3.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.CaptionLabel_3, 3, 2, 1, 1)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.gridLayout_2.addItem(self.verticalSpacer_3, 1, 0, 1, 3)
+
+        self.verticalLayout.addWidget(self.ElevatedCardWidget_3)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout.addItem(self.verticalSpacer_2)
 
         self.ToolButton.setIcon(FIF.GITHUB)
         self.ToolButton_2.setIcon(FIF.GITHUB)
@@ -1121,7 +1291,7 @@ class InfoUi(QFrame):
 
         QMetaObject.connectSlotsByName(self)
 
-    # setupUi
+    # setupUi`
 
     def retranslateUi(self):
         self.setWindowTitle(QCoreApplication.translate("Form", u"Douyin Catcher", None))
@@ -1201,7 +1371,7 @@ class MenuUi(WindowType):
         self.stackWidget = QStackedWidget(self)
 
         # create sub interface
-        self.searchInterface = MainUi()
+        self.mainInterface = MainUi()
         self.aboutInterface = InfoUi()
         self.settingInterface = SettingUi()
 
@@ -1227,18 +1397,20 @@ class MenuUi(WindowType):
         # enable acrylic effect
         self.navigationInterface.setAcrylicEnabled(True)
 
-        self.addSubInterface(self.searchInterface, FIF.DOWNLOAD, '首页')
+        self.addSubInterface(self.mainInterface, FIF.DOWNLOAD, '首页')
         self.addSubInterface(self.settingInterface, FIF.SETTING, '设置')
         self.addSubInterface(self.aboutInterface, FIF.INFO, '关于', NavigationItemPosition.BOTTOM)
 
         # !IMPORTANT: don't forget to set the default route key
-        qrouter.setDefaultRouteKey(self.stackWidget, self.searchInterface.objectName())
+        qrouter.setDefaultRouteKey(self.stackWidget, self.aboutInterface.objectName())
 
         # set the maximum width
         # self.navigationInterface.setExpandWidth(300)
 
         self.stackWidget.currentChanged.connect(self.onCurrentInterfaceChanged)
-        self.stackWidget.setCurrentIndex(0)
+        self.stackWidget.setCurrentIndex(2)
+
+        self.switchTo(self.mainInterface)
 
     def initWindow(self):
         self.resize(772, 515)
@@ -1247,7 +1419,8 @@ class MenuUi(WindowType):
         icon.addPixmap(QPixmap(ico_path), QIcon.Normal, QIcon.Off)
         self.setWindowIcon(icon)
         self.setWindowTitle('Douyin Catcher | ' + VERSION)
-        self.setFixedSize(self.width(), self.height())
+        # self.setFixedSize(self.width(), self.height())
+        self.setMinimumSize(self.width(), self.height())
 
         self.titleBar.setAttribute(Qt.WA_StyledBackground)
 
