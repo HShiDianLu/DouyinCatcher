@@ -1,5 +1,6 @@
 # DouyinCatcher
 A  tool that can download videos/pictures on Douyin without watermarks to the local.
+[![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
 
 ## System Requirements & Recommended
 System: Windows 10 (Recommended Windows 11)
