@@ -1,4 +1,4 @@
-<center># DouyinCatcher
+# <center>DouyinCatcher</center>
 A  tool that can download videos/pictures on Douyin without watermarks to the local.
 
 ![Static Badge](https://img.shields.io/badge/Platform-Windows-Vue)
@@ -7,7 +7,6 @@ A  tool that can download videos/pictures on Douyin without watermarks to the lo
 
 [![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
 ![Static Badge](https://img.shields.io/badge/Language-Python-blue)
-</center>
 
 ## System Requirements & Recommended
 System: Windows 10 (Recommended Windows 11)
