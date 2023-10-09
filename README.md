@@ -1,12 +1,37 @@
-# <center>DouyinCatcher</center>
-A  tool that can download videos/pictures on Douyin without watermarks to the local.
+<h1 align="center">
+  DouyinCatcher
+</h1>
+<p align="center">
+  A  tool that can download videos/pictures on Douyin without watermarks to the local.
+</p>
 
-![Static Badge](https://img.shields.io/badge/Platform-Windows-Vue)
-![GitHub tag (with filter)](https://img.shields.io/github/v/tag/XiaoShen2020/DouyinCatcher?label=Version&color=vue)
-![GitHub all releases](https://img.shields.io/github/downloads/XiaoShen2020/DouyinCatcher/total?label=Downloads&color=vue)
+<p align="center">
+  <a style="text-decoration:none">
+    <img src="https://img.shields.io/github/v/tag/XiaoShen2020/DouyinCatcher?label=Version&color=vue" alt="Version"/>
+  </a>
 
-[![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
-![Static Badge](https://img.shields.io/badge/Language-Python-blue)
+  <a style="text-decoration:none">
+    <img src="https://img.shields.io/github/downloads/XiaoShen2020/DouyinCatcher/total?label=Downloads&color=vue" alt="Downloads"/>
+  </a>
+  
+  <a style="text-decoration:none">
+    <img src="https://img.shields.io/badge/Platform-Windows-Vue" alt="Platform">
+  </a>
+  
+  <a style="text-decoration:none">
+    <img src="https://img.shields.io/badge/Lisence-MIT-Vue" alt="Downloads"/>
+  </a>
+  
+  <br>
+  
+  <a herf="https://github.com/trekhleb/state-of-the-art-shitcode" style="text-decoration:none" target="_blank">
+    <img src="https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804" alt="Shitcode"/>
+  </a>
+
+  <a style="text-decoration:none">
+    <img src="https://img.shields.io/badge/Language-Python-blue" alt="Shitcode"/>
+  </a>
+</p>
 
 ## System Requirements & Recommended
 System: Windows 10 (Recommended Windows 11)
