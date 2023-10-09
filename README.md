@@ -2,6 +2,8 @@
 A  tool that can download videos/pictures on Douyin without watermarks to the local.
 
 [![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
+![Static Badge](https://img.shields.io/badge/Platform-Windows-Vue)
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FXiaoShen2020%2FDouyinCatcher%2Fmain%2FProject.json&query=%24.Version&label=Version)
 
 ## System Requirements & Recommended
 System: Windows 10 (Recommended Windows 11)
