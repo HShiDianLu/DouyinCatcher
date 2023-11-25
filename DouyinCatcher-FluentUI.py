@@ -22,7 +22,7 @@ from qframelesswindow import *
 from qfluentwidgets import FluentIcon as FIF
 from configparser import *
 
-VERSION = "v3.2-FluentUI"
+VERSION = "v3.3-FluentUI"
 FILEDIR = "C:/DouyinCatcher"
 
 # 创建图标
@@ -716,8 +716,6 @@ class MainUi(QFrame):
         self.retranslateUi()
         QMetaObject.connectSlotsByName(self)
 
-    # setupUi
-
     def retranslateUi(self):
         self.TitleLabel.setText(QCoreApplication.translate("Form", u"Douyin Catcher", None))
         self.CaptionLabel.setText(
@@ -745,8 +743,6 @@ class MainUi(QFrame):
         self.PrimaryPushButton_2.setText(QCoreApplication.translate("Form", u"\u4e0b\u8f7d", None))
         self.StrongBodyLabel_2.setText(
             QCoreApplication.translate("Form", u"\u89c6\u9891/\u56fe\u7247\u5217\u8868", None))
-
-    # retranslateUi
 
     # 切换选项
     def changeVideo(self):
@@ -1076,8 +1072,6 @@ class SettingUi(QWidget):
 
         QMetaObject.connectSlotsByName(self)
 
-    # setupUi
-
     def retranslateUi(self):
         self.setWindowTitle(QCoreApplication.translate("Form", u"Douyin Catcher", None))
         self.TitleLabel.setText(QCoreApplication.translate("Form", u"\u8bbe\u7f6e", None))
@@ -1098,8 +1092,6 @@ class SettingUi(QWidget):
                                                             None))
         self.SwitchButton.setOnText(QCoreApplication.translate("Form", u"\u542f\u7528", None))
         self.SwitchButton.setOffText(QCoreApplication.translate("Form", u"\u7981\u7528", None))
-
-    # retranslateUi
 
     def changeMica(self):
         if self.SwitchButton.isChecked():
@@ -1291,8 +1283,6 @@ class InfoUi(QFrame):
 
         QMetaObject.connectSlotsByName(self)
 
-    # setupUi`
-
     def retranslateUi(self):
         self.setWindowTitle(QCoreApplication.translate("Form", u"Douyin Catcher", None))
         self.TitleLabel.setText(QCoreApplication.translate("Form", u"\u5173\u4e8e", None))
@@ -1314,8 +1304,6 @@ class InfoUi(QFrame):
         self.CaptionLabel_2.setText(QCoreApplication.translate("Form", u"Licensed under The MIT License", None))
         self.CaptionLabel_3.setText(QCoreApplication.translate("Form", u"Copyright \u00a9 2023 by HShiDianLu.", None))
 
-    # retranslateUi
-
     def openFluentGitHub(self):
         QDesktopServices.openUrl(QUrl("https://github.com/zhiyiYo/PyQt-Fluent-Widgets"))
 
@@ -1324,18 +1312,14 @@ class InfoUi(QFrame):
 
 
 class CustomTitleBar(TitleBar):
-    """ Title bar with icon and title """
-
     def __init__(self, parent):
         super().__init__(parent)
-        # add window icon
         self.iconLabel = QLabel(self)
         self.iconLabel.setFixedSize(18, 18)
         self.hBoxLayout.insertSpacing(0, 10)
         self.hBoxLayout.insertWidget(1, self.iconLabel, 0, Qt.AlignLeft | Qt.AlignBottom)
         self.window().windowIconChanged.connect(self.setIcon)
 
-        # add title label
         self.titleLabel = QLabel(self)
         self.hBoxLayout.insertWidget(2, self.titleLabel, 0, Qt.AlignLeft | Qt.AlignBottom)
         self.titleLabel.setObjectName('titleLabel')
@@ -1355,6 +1339,35 @@ else:
     WindowType = FramelessWindow
 
 
+class StackedWidget(QFrame):
+    currentChanged = pyqtSignal(int)
+
+    def __init__(self, parent=None):
+        super().__init__(parent=parent)
+        self.hBoxLayout = QHBoxLayout(self)
+        self.view = PopUpAniStackedWidget(self)
+
+        self.hBoxLayout.setContentsMargins(0, 0, 0, 0)
+        self.hBoxLayout.addWidget(self.view)
+
+        self.view.currentChanged.connect(self.currentChanged)
+
+    def addWidget(self, widget):
+        self.view.addWidget(widget)
+
+    def widget(self, index: int):
+        return self.view.widget(index)
+
+    def setCurrentWidget(self, widget, anim=True):
+        if anim:
+            self.view.setCurrentWidget(widget, False, False, 300, QEasingCurve.OutQuad)
+        else:
+            self.view.setCurrentWidget(widget, False, False, 0)
+
+    def setCurrentIndex(self, index, anim=False):
+        self.setCurrentWidget(self.view.widget(index), anim)
+
+
 class MenuUi(WindowType):
 
     def __init__(self):
@@ -1362,23 +1375,17 @@ class MenuUi(WindowType):
         if not config["mica"]:
             self.setTitleBar(CustomTitleBar(self))
 
-        # use dark theme mode
-        # setTheme(Theme.DARK)
-
         self.hBoxLayout = QHBoxLayout(self)
         self.navigationInterface = NavigationInterface(
             self, showMenuButton=True, showReturnButton=True)
-        self.stackWidget = QStackedWidget(self)
+        self.stackWidget = StackedWidget(self)
 
-        # create sub interface
         self.mainInterface = MainUi()
         self.aboutInterface = InfoUi()
         self.settingInterface = SettingUi()
 
-        # initialize layout
         self.initLayout()
 
-        # add items to navigation interface
         self.initNavigation()
 
         self.initWindow()
@@ -1394,23 +1401,18 @@ class MenuUi(WindowType):
         self.navigationInterface.displayModeChanged.connect(self.titleBar.raise_)
 
     def initNavigation(self):
-        # enable acrylic effect
         self.navigationInterface.setAcrylicEnabled(True)
 
         self.addSubInterface(self.mainInterface, FIF.DOWNLOAD, '首页')
         self.addSubInterface(self.settingInterface, FIF.SETTING, '设置')
         self.addSubInterface(self.aboutInterface, FIF.INFO, '关于', NavigationItemPosition.BOTTOM)
 
-        # !IMPORTANT: don't forget to set the default route key
         qrouter.setDefaultRouteKey(self.stackWidget, self.aboutInterface.objectName())
 
-        # set the maximum width
-        # self.navigationInterface.setExpandWidth(300)
-
         self.stackWidget.currentChanged.connect(self.onCurrentInterfaceChanged)
-        self.stackWidget.setCurrentIndex(2)
+        self.stackWidget.setCurrentIndex(2, False)
 
-        self.switchTo(self.mainInterface)
+        self.switchTo(self.mainInterface, False)
 
     def initWindow(self):
         self.resize(772, 515)
@@ -1419,7 +1421,6 @@ class MenuUi(WindowType):
         icon.addPixmap(QPixmap(ico_path), QIcon.Normal, QIcon.Off)
         self.setWindowIcon(icon)
         self.setWindowTitle('Douyin Catcher | ' + VERSION)
-        # self.setFixedSize(self.width(), self.height())
         self.setMinimumSize(self.width(), self.height())
 
         self.titleBar.setAttribute(Qt.WA_StyledBackground)
@@ -1431,7 +1432,6 @@ class MenuUi(WindowType):
         self.setQss()
 
     def addSubInterface(self, interface, icon, text: str, position=NavigationItemPosition.TOP):
-        """ add sub interface """
         self.stackWidget.addWidget(interface)
         self.navigationInterface.addItem(
             routeKey=interface.objectName(),
@@ -1448,8 +1448,8 @@ class MenuUi(WindowType):
         else:
             self.setStyleSheet(LIGHTQSS)
 
-    def switchTo(self, widget):
-        self.stackWidget.setCurrentWidget(widget)
+    def switchTo(self, widget, anim=True):
+        self.stackWidget.setCurrentWidget(widget, anim)
 
     def onCurrentInterfaceChanged(self, index):
         widget = self.stackWidget.widget(index)
