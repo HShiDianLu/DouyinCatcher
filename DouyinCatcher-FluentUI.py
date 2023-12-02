@@ -22,7 +22,7 @@ from qframelesswindow import *
 from qfluentwidgets import FluentIcon as FIF
 from configparser import *
 
-VERSION = "v3.3-FluentUI"
+VERSION = "v3.4-FluentUI"
 FILEDIR = "C:/DouyinCatcher"
 
 # 创建图标
@@ -1308,7 +1308,7 @@ class InfoUi(QFrame):
         QDesktopServices.openUrl(QUrl("https://github.com/zhiyiYo/PyQt-Fluent-Widgets"))
 
     def openGitHub(self):
-        QDesktopServices.openUrl(QUrl("https://github.com/XiaoShen2020/DouyinCatcher"))
+        QDesktopServices.openUrl(QUrl("https://github.com/HShiDianLu/DouyinCatcher"))
 
 
 class CustomTitleBar(TitleBar):
