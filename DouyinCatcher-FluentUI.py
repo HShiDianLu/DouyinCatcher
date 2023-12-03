@@ -94,8 +94,12 @@ Widget {
 }
 
 
-Window {
-    background-color: rgb(32, 32, 32);
+* {
+    background-color: rgb(39, 39, 39);
+}
+
+QLabel {
+    background-color: transparent;
 }
 
 MSFluentTitleBar, CustomTitleBar {
