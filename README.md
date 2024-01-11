@@ -2,7 +2,7 @@
   DouyinCatcher
 </h1>
 <p align="center">
-  A  tool that can download videos/pictures on Douyin without watermarks to the local.
+  A tool that can download videos/pictures on Douyin without watermarks to the local.
 </p>
 
 <p align="center">
