@@ -47,4 +47,4 @@ Pre-installation: Chrome/Microsoft Edge/Firefox/Internet Explorer/Safari browser
 ---
 **This program is for learning and communication purposes only, and the copyright of the video/pictures belongs to the original author. It is strictly prohibited to use it for illegal purposes.**
 
-Copyright © 2023 by HShiDianLu.
+Copyright © 2023-2024 by HShiDianLu.
