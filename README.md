@@ -1,5 +1,5 @@
 <h1 align="center">
-  DouyinCatcher
+  Douyin Catcher
 </h1>
 <p align="center">
   A tool that can download videos/pictures on Douyin without watermarks to the local.
