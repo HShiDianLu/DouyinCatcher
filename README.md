@@ -38,6 +38,8 @@
 
 ![image](https://github.com/HShiDianLu/DouyinCatcher/assets/110763230/42717856-9367-458a-86dc-e130278ac290)
 
+### If antivirus software reports viruses, ignore it. Build it yourself if you are worried about it.
+
 ## System Requirements & Recommended
 System: Windows 10 (Recommended Windows 11)
 
