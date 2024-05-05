@@ -1107,7 +1107,7 @@ class SettingUi(QWidget):
     def changeDir(self):
         file = tkinter.filedialog.askdirectory(title="请选择下载文件夹")
         if file:
-            self.changeVal("download", "path", file, False)
+            changeVal("download", "path", file)
             self.LineEdit.setText(file)
 
     def changeDark(self):
