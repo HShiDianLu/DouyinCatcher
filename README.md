@@ -33,6 +33,11 @@
   </a>
 </p>
 
+## ~~妈的，火绒不知道发什么疯报毒了~~
+![image](https://github.com/HShiDianLu/DouyinCatcher/assets/110763230/42717856-9367-458a-86dc-e130278ac290)
+
+~~对不起，真没忍住~~
+
 ## System Requirements & Recommended
 System: Windows 10 (Recommended Windows 11)
 
