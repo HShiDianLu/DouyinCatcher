@@ -1029,7 +1029,6 @@ class SettingUi(QWidget):
 
         self.SwitchButton = SwitchButton(self)
         self.SwitchButton.setObjectName(u"SwitchButton")
-        self.SwitchButton.setChecked(True)
 
         self.verticalLayout.addWidget(self.SwitchButton)
 
@@ -1063,7 +1062,8 @@ class SettingUi(QWidget):
             self.RadioButton_2.setChecked(True)
         elif config["theme"] == "light":
             self.RadioButton.setChecked(True)
-        self.SwitchButton.setChecked(config["mica"])
+        if config["mica"]:
+            self.SwitchButton.setChecked(True)
 
         self.RadioButton.clicked.connect(self.changeLight)
         self.RadioButton_2.clicked.connect(self.changeDark)
