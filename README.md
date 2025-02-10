@@ -33,8 +33,6 @@
   </a>
 </p>
 
-### If antivirus software reports viruses, ignore it. Build it yourself if you are worried about it.
-
 ## System Requirements & Recommended
 System: Windows 10 (Recommended Windows 11)
 
