@@ -33,11 +33,6 @@
   </a>
 </p>
 
-## ~~妈的，火绒不知道发什么疯报毒了~~
-~~Damn it, I don't know why Huorong went crazy~~
-
-![image](https://github.com/HShiDianLu/DouyinCatcher/assets/110763230/42717856-9367-458a-86dc-e130278ac290)
-
 ### If antivirus software reports viruses, ignore it. Build it yourself if you are worried about it.
 
 ## System Requirements & Recommended
